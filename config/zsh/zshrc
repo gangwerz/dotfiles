@@ -12,7 +12,7 @@ code_bins=$CARGO_HOME/bin:$RUSTUP_HOME/bin:$ZIG_HOME
 
 export PATH=$bin:$PATH:$code_bins
 
-export EDITOR=$bin/nvim
+export EDITOR=hx
 export LESSHISTFILE=$HOME/.config/lesshst
 
 
@@ -34,6 +34,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ALIASES
+## PERSONAL
+alias edit=$EDITOR
+
 ## Utils
 # LS
 alias ls="lsd -F --group-directories-first"
@@ -55,3 +58,6 @@ alias dwn="cd $HOME/.local/share/xdg-downloads/"
 #alias l="exa -l -b --group-directories-first -@"
 #alias ll="exa -l -a -b --group-directories-first -@"
 #alias la="exa -a -b --group-directories-first -@"
+
+
+export PD=$HOME/data/documents/projects
