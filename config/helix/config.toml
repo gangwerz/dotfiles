@@ -3,5 +3,10 @@ theme = "nord"
 [editor]
 line-number = "relative"
 
+[editor.cursor-shape]
+insert = "bar"
+normal = "underline"
+select = "block"
+
 [editor.file-picker]
-hidden = false
+hidden = true
