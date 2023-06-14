@@ -61,3 +61,4 @@ alias dwn="cd $HOME/.local/share/xdg-downloads/"
 
 
 export PD=$HOME/data/documents/projects
+alias cat="bat --theme Nord --style grid,numbers"
