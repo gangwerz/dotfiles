@@ -18,8 +18,28 @@ return require('packer').startup(function(use)
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 
+  use 'shaunsingh/nord.nvim'
+  
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+  
+  vim.cmd[[colorscheme nord]]
+
+
+  require 'nvim-treesitter.configs'.setup {
+    ensure_installed = {"c", "lua", "vim", "query", "odin", "zig", "zig", "python"},
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+      enabled = true
+    }
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
