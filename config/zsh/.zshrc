@@ -12,9 +12,8 @@ code_bins=$CARGO_HOME/bin:$RUSTUP_HOME/bin:$ZIG_HOME
 
 export PATH=$bin:$PATH:$code_bins
 
-export EDITOR=hx
+export EDITOR=nvim
 export LESSHISTFILE=$HOME/.config/lesshst
-
 
 DISABLE_MAGIC_FUNCTIONS=true
 
@@ -61,4 +60,4 @@ alias dwn="cd $HOME/.local/share/xdg-downloads/"
 
 
 export PD=$HOME/data/documents/projects
-alias cat="bat --theme Nord --style grid,numbers"
+alias cat="bat -P --theme Nord --style grid,numbers"
