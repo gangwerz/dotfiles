@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
 
 
   require 'nvim-treesitter.configs'.setup {
-    ensure_installed = {"c", "lua", "vim", "query", "odin", "zig", "zig", "python"},
+    ensure_installed = {"c", "lua", "vim", "query", "odin", "zig", "zig", "python", "ocaml", "ocaml_interface"},
     sync_install = false,
     auto_install = true,
     highlight = {

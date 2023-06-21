@@ -61,3 +61,6 @@ alias dwn="cd $HOME/.local/share/xdg-downloads/"
 
 export PD=$HOME/data/documents/projects
 alias cat="bat -P --theme Nord --style grid,numbers"
+
+# opam configuration
+[[ ! -r /home/gangwerz/.opam/opam-init/init.zsh ]] || source /home/gangwerz/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
