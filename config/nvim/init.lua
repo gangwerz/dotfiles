@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
   -- Put this at the end after all plugins
   
   vim.cmd[[colorscheme nord]]
-
+  vim.cmd[[set relativenumber]]
 
   require 'nvim-treesitter.configs'.setup {
     ensure_installed = {"c", "lua", "vim", "query", "odin", "zig", "zig", "python", "ocaml", "ocaml_interface"},
