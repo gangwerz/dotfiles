@@ -51,6 +51,8 @@ alias wget="wget --hsts-file ~/.config/wget-hsts"
 
 alias dwn="cd $HOME/.local/share/xdg-downloads/"
 
+alias utop='utop -init $OCAML_CONF/init'
+
 ## OLD ALIASES 
 #alias rupy="rustpython"
 
