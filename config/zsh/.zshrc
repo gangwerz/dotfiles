@@ -12,7 +12,7 @@ code_bins=$CARGO_HOME/bin:$RUSTUP_HOME/bin:$ZIG_HOME
 
 export PATH=$bin:$PATH:$code_bins
 
-export EDITOR=nvim
+export EDITOR=helix
 export LESSHISTFILE=$HOME/.config/lesshst
 
 DISABLE_MAGIC_FUNCTIONS=true
@@ -39,12 +39,13 @@ alias edit=$EDITOR
 ## Utils
 # LS
 alias ls="lsd -F --group-directories-first"
-alias l="lsd -lF --header --group-directories-first"
-alias la="lsd -AF --header --group-directories-first"
+alias l="lsd -lF --header --group-directories-first --no-symlink"
+alias la="lsd -AF --group-directories-first --header"
 alias ll="lsd -lAF --header --group-directories-first"
 
 # VIM
 alias vim=$EDITOR
+alias vi=$EDITOR
 # alias code="nohup nvimgui -c Neotree $@ > /dev/null 2>&1 &; disown"
 
 alias wget="wget --hsts-file ~/.config/wget-hsts"

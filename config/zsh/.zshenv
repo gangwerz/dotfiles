@@ -13,4 +13,10 @@ export XDG_VIDEOS_DIR="$HOME/data/media/videos"
 ### LANGS
 # OCAML
 export OCAML_CONF="$XDG_CONFIG_HOME/ocaml"
-export PATH=$PATH:/usr/local/go/bin
+export GOROOT=$HOME/.local/lib/go
+export GOPATH=$GOROOT
+export NIMBLE_PATH=$HOME/.local/lib/nimble
+export CODE_PATH=$GOROOT/bin:$NIMBLE_PATH/bin
+export USER_PATH=$HOME/.local/bin
+export PATH=$CODE_PATH:$USER_PATH:$PATH
+export DOTNET_CLI_HOME=$XDG_CONFIG_HOME/microsoft

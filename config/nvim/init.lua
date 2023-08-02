@@ -1,15 +1,48 @@
--- LAZY PLUGIN MANAGER
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+-- INIT PACKER
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
-vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(plugins, opts)
+local packer_bootstrap = ensure_packer()
+
+return require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
+  -- My plugins here
+  -- use 'foo1/bar1.nvim'
+  -- use 'foo2/bar2.nvim'
+
+  use 'shaunsingh/nord.nvim'
+  
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  
+  vim.cmd[[colorscheme nord]]
+  vim.cmd[[set relativenumber]]
+
+  require 'nvim-treesitter.configs'.setup {
+    ensure_installed = {"c", "lua", "vim", "query", "odin", "zig", "zig", "python", "ocaml", "ocaml_interface"},
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+      enabled = true
+    }
+  }
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end)
+
+
