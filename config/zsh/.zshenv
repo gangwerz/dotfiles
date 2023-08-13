@@ -13,8 +13,8 @@ export XDG_VIDEOS_DIR="$HOME/data/media/videos"
 ### LANGS
 # OCAML
 export OCAML_CONF="$XDG_CONFIG_HOME/ocaml"
-export GOROOT=$HOME/.local/lib/go
-export GOPATH=$GOROOT
+export GOROOT=$HOME/.local/lib/go/root
+export GOPATH=$HOME/.local/lib/go/path
 export NIMBLE_PATH=$HOME/.local/lib/nimble
 export CODE_PATH=$GOROOT/bin:$NIMBLE_PATH/bin
 export USER_PATH=$HOME/.local/bin

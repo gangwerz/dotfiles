@@ -12,7 +12,7 @@ code_bins=$CARGO_HOME/bin:$RUSTUP_HOME/bin:$ZIG_HOME
 
 export PATH=$bin:$PATH:$code_bins
 
-export EDITOR=nvim
+export EDITOR=vim
 export LESSHISTFILE=$HOME/.config/lesshst
 
 DISABLE_MAGIC_FUNCTIONS=true

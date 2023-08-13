@@ -35,7 +35,7 @@ exec --no-startup-id dex --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 #exec --no-startup-id nm-applet
 
-exec_always --no-startup-id /home/gangwerz/.local/bin/screenlayout
+exec_always --no-startup-id /home/gangwerz/.local/bin/screens.sh
 
 gaps inner 8px
 #gaps outer 8px
@@ -78,10 +78,10 @@ bindsym $mod+grave exec --no-startup-id rofi -show drun -theme /usr/share/rofi/t
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -102,7 +102,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -165,7 +165,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -201,8 +201,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command exec ~/.local/bin/baristabar
-	font pango:FantasqueSansM Nerd Font 12
+        status_command i3status #exec ~/.local/bin/baristabar
+	font pango:FantasqueSansM Nerd Font 16
 	tray_output primary
 	colors {
 		background #2E3440
