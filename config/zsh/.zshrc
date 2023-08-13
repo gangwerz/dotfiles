@@ -12,7 +12,7 @@ code_bins=$CARGO_HOME/bin:$RUSTUP_HOME/bin:$ZIG_HOME
 
 export PATH=$bin:$PATH:$code_bins
 
-export EDITOR=vim
+export EDITOR=nvim
 export LESSHISTFILE=$HOME/.config/lesshst
 
 DISABLE_MAGIC_FUNCTIONS=true
@@ -52,7 +52,10 @@ alias wget="wget --hsts-file ~/.config/wget-hsts"
 
 alias dwn="cd $HOME/.local/share/xdg-downloads/"
 
+alias top='gotop --nvidia'
 alias utop='utop -init $OCAML_CONF/init'
+
+alias less='bat --theme Nord'
 
 ## OLD ALIASES 
 #alias rupy="rustpython"
@@ -66,4 +69,6 @@ export PD=$HOME/data/documents/projects
 alias cat="bat -P --theme Nord --style grid,numbers"
 
 # opam configuration
-[[ ! -r /home/gangwerz/.opam/opam-init/init.zsh ]] || source /home/gangwerz/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /home/gangwerz/.local/lib/opam/opam-init/init.zsh ]]\
+	|| source /home/gangwerz/.local/lib/opam/opam-init/init.zsh\
+	> /dev/null 2> /dev/null
