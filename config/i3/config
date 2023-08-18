@@ -44,8 +44,16 @@ gaps inner 8px
 exec_always --no-startup-id xsetroot -solid "#4C566A"
 exec_always picom --backend glx
 
-default_border pixel 0
-default_floating_border pixel 0
+default_border pixel 4
+default_floating_border pixel 4
+
+# COLORS					BORDER	BCKGRND	TEXT	INDCTR	CHILD_BORDER
+client.focused				#BF616A	#4C566A	#D8DEE9	#BF616A	#BF616A
+client.focused_inactive		#D08770	#434C5E	#ECEFF4	#D08770	#D08770
+client.unfocused			#5E81AC	#2E3440	#8FBCBB	#81A1C1	#5E81AC
+
+
+client.background	#15181E
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
