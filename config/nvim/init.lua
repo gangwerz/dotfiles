@@ -72,7 +72,7 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.wrap = true
-vim.opt.autochdir = true
+-- vim.opt.autochdir = true
 
 vim.cmd[[colorscheme nord]]
 
