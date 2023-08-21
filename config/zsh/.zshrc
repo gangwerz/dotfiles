@@ -52,7 +52,7 @@ alias wget="wget --hsts-file ~/.config/wget-hsts"
 
 alias dwn="cd $HOME/.local/share/xdg-downloads/"
 
-alias top='gotop -l minimal --nvidia --no-percpu --statusbar --rate=4s --no-test'
+alias top='gotop -l minimal --no-percpu --statusbar --rate=4s --no-test'
 alias utop='utop -init $OCAML_CONF/init'
 
 alias less='bat --theme Nord'
