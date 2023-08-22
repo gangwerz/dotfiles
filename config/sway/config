@@ -29,13 +29,17 @@ gaps inner 16
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Default wallpaper
+# (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * bg #15181e solid_color
 
-output eDP-1 scale 1.25 disable
-output DP-2 scale 1.25 position 0,0
-output DP-1 scale 1.0 position 3072,640 
+output eDP-1 scale 1.0 disable
+output DP-2 scale 1.0 position 0,0
+output DP-1 scale 1.0 position 3840,1080 
+
+workspace 0 output DP-1
+workspace 1 output DP-2
 
 # Example configuration:
 #
@@ -71,10 +75,14 @@ output DP-1 scale 1.0 position 3072,640
 # Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
-#
+
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
 # Basics:
 #
-    # Start a terminal
+	# Start a terminal
     bindsym $mod+Return exec $term
 
     # Kill focused window
