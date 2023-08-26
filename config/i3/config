@@ -10,7 +10,7 @@ exec xrdb /home/gangwerz/.config/i3/xresources
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -42,15 +42,17 @@ gaps inner 8px
 #gaps outer 8px
 
 exec_always --no-startup-id xsetroot -solid "#4C566A"
-exec_always picom --backend glx
+exec_always --no-startup-id picom --backend glx
 
 default_border pixel 4
 default_floating_border pixel 4
 
+focus_follows_mouse no
+
 # COLORS					BORDER	BCKGRND	TEXT	INDCTR	CHILD_BORDER
-client.focused				#BF616A	#4C566A	#D8DEE9	#BF616A	#BF616A
-client.focused_inactive		#D08770	#434C5E	#ECEFF4	#D08770	#D08770
-client.unfocused			#5E81AC	#2E3440	#8FBCBB	#81A1C1	#5E81AC
+client.focused				#8FBCBB	#4C566A	#D8DEE9	#4C566A	#8FBCBB
+client.focused_inactive		#4C566A	#434C5E	#ECEFF4	#D08770	#4C566A
+client.unfocused			#2E3440	#2E3440	#8FBCBB	#88C0D0	#2E3440
 
 
 client.background	#15181E
