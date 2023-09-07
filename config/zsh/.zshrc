@@ -38,10 +38,10 @@ alias edit=$EDITOR
 
 ## Utils
 # LS
-alias ls="lsd -F --group-directories-first"
-alias l="lsd -lF --header --group-directories-first --no-symlink"
-alias la="lsd -AF --group-directories-first --header"
-alias ll="lsd -lAF --header --group-directories-first"
+alias ls="lsd -F --group-directories-first --date +%Y_%m_%d --permission octal"
+alias l="lsd -lF --group-directories-first --no-symlink --date +%Y_%m_%d --permission octal"
+alias la="lsd -AF --group-directories-first --date +%Y_%m_%d --permission octal"
+alias ll="lsd -lAF --group-directories-first --date +%Y_%m_%d --permission octal"
 
 # VIM
 alias vim=$EDITOR
@@ -55,7 +55,11 @@ alias dwn="cd $HOME/.local/share/xdg-downloads/"
 alias top='gotop -l minimal --no-percpu --statusbar --rate=4s --no-test'
 alias utop='utop -init $OCAML_CONF/init'
 
+alias bat='batcat'
 alias less='bat --theme Nord'
+
+alias reboot='systemctl reboot'
+alias poweroff='systemctl poweroff'
 
 ## OLD ALIASES 
 #alias rupy="rustpython"

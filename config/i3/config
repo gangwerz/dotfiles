@@ -27,8 +27,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "0"
 
-workspace $ws1 output HDMI-0
-workspace $ws10 output DP-0
+workspace $ws1 output DP-4
+workspace $ws9 output DP-0
+workspace $ws10 output HDMI-0
 
 ### Status Bar
 bar {
@@ -47,7 +48,7 @@ bar {
 
 ##### STYLING #####
 ### Font
-font pango:FantasqueSansM Nerd Font 24
+font pango:FantasqueSansM Nerd Font 16
 
 ### Space around windows
 gaps inner 16px
@@ -99,7 +100,7 @@ bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
 ### Terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 ### Kill focused window
 bindsym $mod+Shift+q kill
