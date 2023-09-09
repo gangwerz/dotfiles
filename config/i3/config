@@ -27,9 +27,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "0"
 
-workspace $ws1 output DP-4
+workspace $ws1 output DP-2
 workspace $ws9 output DP-0
-workspace $ws10 output HDMI-0
+workspace $ws10 output DP-4
 
 ### Status Bar
 bar {
@@ -76,12 +76,13 @@ exec --no-startup-id xset -dpms
 
 ### Compositor
 exec_always picom --backend glx
+#exec_always xcompmgr -c -f -n
 
 ### Screen Configuration
 exec_always --no-startup-id /home/gangwerz/.local/bin/screenlayout
 
 ### Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Media/Pictures/wallpaper.png
+exec_always --no-startup-id feh --bg-fill --randomize --recursive ~/Media/Pictures/Wallpapers
 
 ##### KEYBINDINGS #####
 ### PULSEAUDIO
