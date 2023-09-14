@@ -66,6 +66,7 @@ require("remap")
 
 -- VIM OPTIONS
 vim.opt.colorcolumn = "80"
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -73,6 +74,9 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.wrap = true
 vim.opt.scrolloff = 999
+vim.opt.mouse = ""
+
+
 -- vim.opt.autochdir = true
 
 vim.cmd[[colorscheme nord]]
@@ -102,7 +106,7 @@ require'nvim-treesitter.configs'.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    disable = { "c", "rust" },
+    disable = {  },
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
     disable = function(lang, buf)
         local max_filesize = 100 * 1024 -- 100 KB
@@ -121,7 +125,11 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- LSP ZERO
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero').preset({
+	manage_nvim_cmp = {
+		set_extra_mappings = true,
+	}
+})
 
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
@@ -134,3 +142,9 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
 
+local cmp = require("cmp")
+cmp.setup({
+	mapping = cmp.mapping.preset.insert({
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+	})
+})

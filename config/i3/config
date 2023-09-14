@@ -51,7 +51,7 @@ bar {
 font pango:FantasqueSansM Nerd Font 16
 
 ### Space around windows
-gaps inner 16px
+gaps inner 8px
 
 ### Window Borders
 default_border pixel 4
